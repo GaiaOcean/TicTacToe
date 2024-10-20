@@ -108,10 +108,13 @@ def game():
             # Verifica vitória ou empate após uma jogada válida
             if verificarVencer(matrix) == 1:
                 showMatriz(matrix)  # Mostra a matriz final
-
+                print("Aperte Enter para sair do jogo...")
+                input(" ")
                 break
             elif verificarEmpate(matrix) == 1:
                 showMatriz(matrix)  # Mostra a matriz final
+                print("Aperte Enter para sair do jogo...")
+                input(" ")
                 break
 
             turn += 1  # Incrementa o turno
