@@ -10,9 +10,9 @@ def showMatriz(matrix):
     for i in range(0, 3):
         for j in range(0, 3):
             if matrix[i][j] == 'X':
-                print("\033[35m|X|\033[0m", end='')  # Pink for X
+                print("|X|", end='')  # Pink for X
             elif matrix[i][j] == 'O':
-                print("\033[34m|O|\033[0m", end='')  # Purple for O
+                print("|O|", end='')  # Purple for O
             else:
                 print(f"|{matrix[i][j]}|", end='')
         print()
@@ -22,17 +22,17 @@ def vitoriaDiagonais(matrix):
 
     if matrix[2][2] == matrix[1][1] == matrix[0][0]:
         if matrix[2][2] == 'X':
-            print("\033[35mO jogador X venceu\033[0m")
+            print("O jogador X venceu")
             return 1
         elif matrix[2][2] == 'O':
-            print("\033[34mO jogador O venceu\033[0m")
+            print("O jogador O venceu")
             return 1
     if matrix[2][0] == matrix[1][1] == matrix[0][2]:
         if matrix[2][0] == 'X':
-            print("\033[35mO jogador X venceu\033[0m")
+            print("O jogador X venceu")
             return 1
         elif matrix[2][0] == 'O':
-            print("\033[34mO jogador O venceu\033[0m")
+            print("O jogador O venceu")
             return 1
     return -1
 
@@ -40,10 +40,10 @@ def vitoriaColunas(matrix):
     for i in range(3):
         if matrix[0][i] == matrix[1][i] == matrix[2][i] in ['X','O']:
             if matrix[0][i] == 'X':
-                print("\033[35mO jogador X venceu\033[0m")
+                print("O jogador X venceu")
                 return 1
             elif matrix[0][i] == 'O':
-                print("\033[34mO jogador O venceu\033[0m")
+                print("O jogador O venceu")
                 return 1
     return -1
 
@@ -51,10 +51,10 @@ def vitoriaLinhas(matrix):
     for j in matrix:
         if j[0] == j[1] == j[2] and j[0] in ['X', 'O']:
             if j[0] == 'X':
-                print("\033[35mO jogador X venceu\033[0m")
+                print("O jogador X venceu")
                 return 1
             elif j[0] == 'O':
-                print("\033[34mO jogador O venceu\033[0m")
+                print("O jogador O venceu")
     return -1 # Se não houver vencedor
 
 
@@ -89,10 +89,10 @@ def updateMatrix(matrix, move, player):
 def askUserIn(turn):
     move = ' '
     if turn % 2 != 0:
-        move = int(input("\033[35mX's turn. Input move(0-8): \033[0m"))
+        move = int(input("X's turn. Input move(0-8): "))
         player = 'X'
     else:
-         move = int(input("\033[34mO's turn. Input move(0-8): \033[0m"))
+         move = int(input("O's turn. Input move(0-8): "))
          player = 'O'
     turn += 1
     return move,player
@@ -119,7 +119,7 @@ def game():
 
             turn += 1  # Incrementa o turno
         else:
-            print("\033[31mEscolha outra jogada\033[m")
+            print("Escolha outra jogada")
 
 
 
